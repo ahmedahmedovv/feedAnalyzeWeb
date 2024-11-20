@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const summaryTimestamp = document.getElementById('summaryTimestamp');
     const loadingModal = M.Modal.getInstance(document.getElementById('loadingModal'));
     
+    function makeLinksClickable(text) {
+        // Convert URLs in square brackets to clickable links
+        return text.replace(/\[(https?:\/\/[^\]]+)\]/g, function(match, url) {
+            return `[<a href="${url}" target="_blank" class="blue-text text-darken-2">${url}</a>]`;
+        });
+    }
+    
     generateBtn.addEventListener('click', async function() {
         try {
             loadingModal.open();
@@ -19,7 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
             
             if (data.status === 'success') {
-                summaryContent.textContent = data.summary;
+                // Convert links and preserve line breaks
+                const formattedSummary = makeLinksClickable(data.summary)
+                    .replace(/\n/g, '<br>');
+                summaryContent.innerHTML = formattedSummary;
                 summaryTimestamp.textContent = data.timestamp;
                 summarySection.style.display = 'block';
                 M.toast({html: 'Summary generated successfully!', classes: 'green'});

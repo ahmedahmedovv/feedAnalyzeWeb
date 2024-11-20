@@ -24,10 +24,31 @@ main {
     line-height: 1.6;
 }
 
+#summaryContent a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#summaryContent a:hover {
+    text-decoration: underline;
+}
+
 #summaryTimestamp {
     margin-left: 20px;
 }
 
 .modal {
     max-width: 400px;
-} 
+}
+
+/* Style for links in the summary */
+.summary-link {
+    color: #1565C0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.summary-link:hover {
+    color: #0D47A1;
+    text-decoration: underline;
+}
