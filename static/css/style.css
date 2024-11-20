@@ -52,3 +52,25 @@ main {
     color: #0D47A1;
     text-decoration: underline;
 }
+
+/* Add these styles to your existing CSS */
+.input-field textarea {
+    min-height: 200px;
+    font-family: monospace;
+}
+
+nav .brand-logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .brand-logo i {
+    margin-right: 8px;
+}
+
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

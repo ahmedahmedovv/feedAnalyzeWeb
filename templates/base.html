@@ -17,6 +17,9 @@
                 <i class="material-icons">article</i>
                 News Summarizer
             </a>
+            <ul class="right">
+                <li><a href="/options"><i class="material-icons">settings</i></a></li>
+            </ul>
         </div>
     </nav>
 
@@ -34,5 +37,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% if request.endpoint == 'options' %}
+    <script src="{{ url_for('static', filename='js/options.js') }}"></script>
+    {% endif %}
 </body>
 </html> 
