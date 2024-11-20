@@ -9,10 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadingModal = M.Modal.getInstance(document.getElementById('loadingModal'));
     
     function makeLinksClickable(text) {
-        // Convert URLs in square brackets to clickable links
-        return text.replace(/\[(https?:\/\/[^\]]+)\]/g, function(match, url) {
+        // First, convert URLs in square brackets to clickable links
+        text = text.replace(/\[(https?:\/\/[^\]]+)\]/g, function(match, url) {
             return `[<a href="${url}" target="_blank" class="blue-text text-darken-2">${url}</a>]`;
         });
+        
+        // Then, format the titles with the news-title class
+        text = text.replace(/(Title:\s*)(.*?)(\nSummary:)/g, function(match, prefix, title, suffix) {
+            return `${prefix}<span class="news-title">${title}</span>${suffix}`;
+        });
+        
+        return text;
     }
     
     generateBtn.addEventListener('click', async function() {

@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #f5f5f5;
 }
 
 main {
@@ -9,9 +10,16 @@ main {
     padding: 20px 0;
 }
 
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
 .card-title {
     display: flex !important;
     align-items: center;
+    font-weight: bold;
+    color: #1565C0;
 }
 
 .card-title i {
@@ -22,6 +30,7 @@ main {
     white-space: pre-wrap;
     font-size: 1.1rem;
     line-height: 1.6;
+    color: #424242;
 }
 
 #summaryContent a {
@@ -35,13 +44,13 @@ main {
 
 #summaryTimestamp {
     margin-left: 20px;
+    font-size: 0.9rem;
 }
 
 .modal {
     max-width: 400px;
 }
 
-/* Style for links in the summary */
 .summary-link {
     color: #1565C0;
     text-decoration: none;
@@ -53,7 +62,6 @@ main {
     text-decoration: underline;
 }
 
-/* Add these styles to your existing CSS */
 .input-field textarea {
     min-height: 200px;
     font-family: monospace;
@@ -73,4 +81,10 @@ nav .brand-logo i {
         left: 50%;
         transform: translateX(-50%);
     }
+}
+
+#summaryContent .news-title {
+    font-weight: bold;
+    color: #1565C0;
+    margin-bottom: 10px;
 }
