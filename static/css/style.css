@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    padding: 20px 0;
+}
+
+.card-title {
+    display: flex !important;
+    align-items: center;
+}
+
+.card-title i {
+    margin-right: 10px;
+}
+
+#summaryContent {
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#summaryTimestamp {
+    margin-left: 20px;
+}
+
+.modal {
+    max-width: 400px;
+} 

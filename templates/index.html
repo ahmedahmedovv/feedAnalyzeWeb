@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">
+                    <i class="material-icons left">summarize</i>
+                    News Summary Generator
+                </span>
+                <p>Generate a summary of the latest news from configured RSS feeds.</p>
+            </div>
+            <div class="card-action">
+                <button id="generateBtn" class="btn waves-effect waves-light">
+                    <i class="material-icons left">play_arrow</i>
+                    Generate Summary
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="summarySection" class="row" style="display: none;">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">
+                    <i class="material-icons left">article</i>
+                    Generated Summary
+                    <small id="summaryTimestamp" class="grey-text"></small>
+                </span>
+                <div id="summaryContent" class="flow-text"></div>
+            </div>
+            <div class="card-action">
+                <a href="#" id="downloadBtn" class="btn waves-effect waves-light">
+                    <i class="material-icons left">download</i>
+                    Download Report
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="loadingModal" class="modal">
+    <div class="modal-content center-align">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <h4>Generating Summary...</h4>
+        <p>This may take a few moments</p>
+    </div>
+</div>
+{% endblock %} 
