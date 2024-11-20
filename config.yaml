@@ -17,7 +17,7 @@ openai:
   # Higher values = more creative/varied
   temperature: 0.7
   # Number of news items to include in the final summary -- summary screen
-  max_news_items: 10
+  max_news_items: 5
 
 # Article Processing
 articles:
